@@ -8,6 +8,8 @@ def test_connection(table_name="quotes"):
     load_dotenv()
     url = os.getenv("SUPABASE_URL")
     key = os.getenv("SUPABASE_KEY")
+    print("URL:",url)
+    print("Key:",key)
     supabase = create_client(url, key)
     try:
         # 指定されたテーブルのデータを1件取得してみる
