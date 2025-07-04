@@ -11,10 +11,11 @@ def test_connection():
     try:
         # quotesテーブルのデータを1件取得してみる
         res = supabase.table("quotes").select("*").limit(1).execute()
-        print("Supabase接続OK！")
         print("データ例:", res.data)
+        return True
     except Exception as e:
         print("接続エラー:", e)
+        return False
 
 if __name__ == "__main__":
     test_connection()
